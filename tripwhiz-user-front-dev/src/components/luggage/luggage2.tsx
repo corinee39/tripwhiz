@@ -21,7 +21,7 @@
 //
 //     const { isLoaded, loadError } = useJsApiLoader({
 //         googleMapsApiKey:
-//             import.meta.env.VITE_REACT_APP_GOOGLE_MAPS_API_KEY || "AIzaSyCAEphgIbIzt3ECeOlAkuKSLpoDs1DZRVY",
+//             import.meta.env.VITE_GOOGLE_MAP_KEY || "",
 //     });
 //
 //     // 지도 클릭 시 출발지와 도착지 설정

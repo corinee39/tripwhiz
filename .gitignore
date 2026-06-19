@@ -3,6 +3,7 @@
 .env.*
 !.env.example
 **/src/main/resources/firebase/*.json
+**/public/firebase-config.json
 
 # Logs
 logs/
