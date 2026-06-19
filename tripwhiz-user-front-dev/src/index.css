@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+/* 화면을 중앙에 고정하고 배경 색상을 설정 */
+html, body {
+    @apply h-screen w-screen bg-gray-100 flex justify-center items-center;
+}
+
+/* 크롬, 사파리, 엣지 등 웹킷 기반 브라우저에서 스크롤바 숨기기 */
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/* Firefox에서 스크롤바 숨기기 */
+html {
+    scrollbar-width: none; /* Firefox 전용 */
+    -ms-overflow-style: none; /* IE 및 오래된 Edge에서 스크롤바 숨기기 */
+}
+
+/* 스크롤은 가능하지만 스크롤바가 보이지 않도록 설정 */
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
