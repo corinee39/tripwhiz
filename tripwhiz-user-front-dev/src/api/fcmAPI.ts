@@ -35,7 +35,6 @@ export const registerFCMToken = async (
             email: email,
         });
 
-        console.log("FCM Token 등록 성공:", response.data);
         return response.data;
     } catch (error) {
         console.error("FCM Token 등록 실패:", getErrorMessage(error));
@@ -56,7 +55,6 @@ export const sendTestNotification = async (
             message: message,
         });
 
-        console.log("테스트 알림 전송 성공:", response.data);
         return response.data;
     } catch (error) {
         console.error("테스트 알림 전송 실패:", getErrorMessage(error));

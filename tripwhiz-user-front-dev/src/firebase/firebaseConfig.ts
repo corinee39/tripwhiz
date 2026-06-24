@@ -32,7 +32,6 @@ export const requestFCMToken = async (): Promise<string | null> => {
         const token = await getToken(messaging, {
             vapidKey: import.meta.env.VITE_FIREBASE_VAPID_KEY,
         });
-        console.log("FCM 토큰:", token);
         return token;
     } catch (error) {
         console.error("FCM 토큰 요청 실패:", error);
@@ -44,7 +43,6 @@ export const requestFCMToken = async (): Promise<string | null> => {
 export const onMessageListener = () =>
     new Promise((resolve) => {
         onMessage(messaging, (payload) => {
-            console.log("알림 수신:", payload);
             resolve(payload);
         });
     });

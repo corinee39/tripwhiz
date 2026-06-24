@@ -1,9 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useDestination } from "../../hooks/useDestination.ts";
 import { useEffect, useState } from "react";
-import Slider from "react-slick";
+import SlickSlider from "react-slick";
+import type { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+const Slider = (
+    (SlickSlider as unknown as { default?: typeof SlickSlider }).default ?? SlickSlider
+) as typeof SlickSlider;
 
 const destinations = [
     { id: 1, name: "Cambodia", image: "/images/country/Cambodia.jpg" },
@@ -53,7 +58,7 @@ function DestinationPage(): JSX.Element {
         navigate("/theme");
     };
 
-    const sliderSettings = {
+    const sliderSettings: Settings = {
         dots: false,
         infinite: true,
         speed: 500,

@@ -26,11 +26,8 @@ function KakaoRedirectPage() {
         // 인증 코드를 이용해 액세스 토큰을 요청
         getAccessToken(authCode).then(accessToken => {
 
-            console.log(accessToken)
             // 액세스 토큰을 사용해 사용자 정보를 가져옴
-            getKakaoWithAccessToken(accessToken, setUser).then(result => {
-                console.log("======================2");
-                console.log(result);
+            getKakaoWithAccessToken(accessToken, setUser).then(() => {
                 setLoading(false); // JH
             })
         })

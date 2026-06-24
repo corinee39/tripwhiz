@@ -41,6 +41,10 @@ com:
     accessTime: 60
     refreshTime: 10080
     alwaysNew: true
+    jwt:
+      secret: ${TRIPWHIZ_JWT_SECRET:}
+    firebase:
+      config-path: ${TRIPWHIZ_FIREBASE_CONFIG_PATH:}
     uploadBasic: ${TRIPWHIZ_UPLOAD_DIR:C:\\upload}
     upload:
       productpath: product

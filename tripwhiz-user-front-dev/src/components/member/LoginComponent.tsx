@@ -10,8 +10,6 @@ function LoginComponent() {
     // Google Login Functionality
     const googleLogin = useGoogleLogin({
         onSuccess: async (tokenResponse) => {
-            console.log("Access Token:", tokenResponse.access_token);
-
             // 액세스 토큰을 서버 API로 보내고 상태 업데이트
             await getGoogleWithAccessToken(tokenResponse.access_token, setUser);
 

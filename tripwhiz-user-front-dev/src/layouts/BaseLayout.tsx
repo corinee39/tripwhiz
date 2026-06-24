@@ -12,14 +12,11 @@ function BaseLayout({ children }: { children: ReactNode }) {
         if (permission === "granted") {
 
             alert("Notification granted!")
-            const token = await getToken(messaging, {
+            await getToken(messaging, {
 
-                vapidKey: 'BPBzQraHoZvc1D9vyZtyRSXLBRcWf3bhXCL3qgeMHcIfop5nQWFIkmpdPa0c2BzOW5JTXLICfd2SGxH1Or74Gxo',
+                vapidKey: import.meta.env.VITE_FIREBASE_VAPID_KEY,
 
             });
-
-            //We can send token to server
-            console.log("Token generated : ", token);
 
         } else if (permission === "denied") {
 
@@ -37,8 +34,7 @@ function BaseLayout({ children }: { children: ReactNode }) {
     }, []);
 
 
-    onMessage(messaging, (payload) => {
-        console.log(payload);
+    onMessage(messaging, () => {
         alert("On Message ")
     });
 

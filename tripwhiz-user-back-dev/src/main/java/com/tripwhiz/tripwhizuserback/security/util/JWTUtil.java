@@ -2,29 +2,34 @@ package com.tripwhiz.tripwhizuserback.security.util;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
-import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
+import java.nio.charset.StandardCharsets;
 import java.time.ZonedDateTime;
 import java.util.Date;
 import java.util.Map;
 
 @Component
-@Log4j2
 public class JWTUtil {
-    private static String key = "1234567890123456789012345678901234567890";
+
+    private final SecretKey secretKey;
+
+    public JWTUtil(@Value("${com.tripwhiz.jwt.secret}") String jwtSecret) {
+        if (jwtSecret == null || jwtSecret.isBlank()) {
+            throw new IllegalStateException("TRIPWHIZ_JWT_SECRET environment variable must be set.");
+        }
+
+        byte[] secretBytes = jwtSecret.getBytes(StandardCharsets.UTF_8);
+        if (secretBytes.length < 32) {
+            throw new IllegalStateException("TRIPWHIZ_JWT_SECRET must be at least 32 bytes for HS256.");
+        }
+
+        this.secretKey = Keys.hmacShaKeyFor(secretBytes);
+    }
 
     public String createToken(Map<String, Object> valueMap, int min) {
-
-        SecretKey key = null;
-
-        try {
-            key = Keys.hmacShaKeyFor(JWTUtil.key.getBytes("UTF-8"));
-
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage());
-        }
 
         return Jwts.builder().header()
                 .add("typ", "JWT")
@@ -33,28 +38,17 @@ public class JWTUtil {
                 .issuedAt(Date.from(ZonedDateTime.now().toInstant()))
                 .expiration((Date.from(ZonedDateTime.now()
                         .plusMinutes(min).toInstant()))).claims(valueMap)
-                .signWith(key)
+                .signWith(secretKey)
                 .compact();
 
     }
 
     public Map<String, Object> validateToken(String token) {
 
-        SecretKey key = null;
-
-        try {
-            key = Keys.hmacShaKeyFor(JWTUtil.key.getBytes("UTF-8"));
-
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage());
-        }
-
-        Claims claims = Jwts.parser().verifyWith(key)
+        Claims claims = Jwts.parser().verifyWith(secretKey)
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
-
-        log.info("claims: " + claims);
 
         return claims;
 

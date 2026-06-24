@@ -9,9 +9,7 @@ const useFCM = (email: string | null) => {
                 await registerServiceWorker(); // Service Worker 등록
                 const token = await requestFCMToken(); // FCM 토큰 요청
                 if (token) {
-                    console.log("FCM 토큰:", token);
                     if (email) {
-                        console.log(`서버에 FCM 토큰 등록: ${email}`);
                         // 서버에 FCM 토큰 등록 API 호출
                         await registerFCMToken(token, email, true); // isUser = true로 설정
                     }
@@ -24,9 +22,7 @@ const useFCM = (email: string | null) => {
 
         const listenToMessages = () => {
             onMessageListener()
-                .then((payload) => {
-                    console.log("포그라운드 알림 수신:", payload);
-                })
+                .then(() => {})
                 .catch((err) => console.error("알림 수신 오류:", err));
         };
 
