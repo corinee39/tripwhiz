@@ -37,13 +37,16 @@ QR 코드로 해외 현지의 편의점에서 픽업할 수 있는 모바일 친
 
 <br>
 
-- 여행지/테마 선택 & 선택 기반 상품 리스트
+- 여행지/테마 선택 & 선택 기반 상품 리스트<br>
 ![alt text](./tripwhiz-user-front-dev/public/images/readme/image-1.png)
-- 픽업 날짜 선택 & 주문/결제
+
+- 픽업 날짜 선택 & 주문/결제<br>
 ![alt text](./tripwhiz-user-front-dev/public/images/readme/image-2.png)
-- 수화물 보관/이동
+
+- 수화물 보관/이동<br>
 ![alt text](./tripwhiz-user-front-dev/public/images/readme/image-3.png)
-- 챗봇 UI
+
+- 챗봇 UI<br>
 ![alt text](./tripwhiz-user-front-dev/public/images/readme/image-4.png)
 
 ---
@@ -80,18 +83,18 @@ QR 코드로 해외 현지의 편의점에서 픽업할 수 있는 모바일 친
 
 `com.tripwhiz.tripwhizuserback` 패키지 하위 주요 도메인:
 
-- `member` — 회원, 소셜 로그인(Google/Kakao)
-- `product` — 상품, 테마, 테마 카테고리
-- `category` — 카테고리 / 서브카테고리
-- `cart` — 장바구니
-- `order` — 주문, 주문 상세, 주문 상태
-- `luggage` — 짐 보관 / 짐 이동
-- `qrcode` — QR 코드 생성
-- `store` — 매장 정보
-- `fcm` — 푸시 알림
-- `security` — JWT 필터 / 시큐리티 설정
-- `manager` — 점주 연동
-- `util` — 파일 업로드 등 공통 유틸
+- `member` - 회원, 소셜 로그인(Google/Kakao)
+- `product` - 상품, 테마, 테마 카테고리
+- `category` - 카테고리 / 서브카테고리
+- `cart` - 장바구니
+- `order` - 주문, 주문 상세, 주문 상태
+- `luggage` - 짐 보관 / 짐 이동
+- `qrcode` - QR 코드 생성
+- `store` - 매장 정보
+- `fcm` - 푸시 알림
+- `security` - JWT 필터 / 시큐리티 설정
+- `manager` - 점주 연동
+- `util` - 파일 업로드 등 공통 유틸
 
 ---
 
