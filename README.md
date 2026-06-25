@@ -38,16 +38,16 @@ QR 코드로 해외 현지의 편의점에서 픽업할 수 있는 모바일 친
 <br>
 
 - 여행지/테마 선택 & 선택 기반 상품 리스트<br>
-<img src="./tripwhiz-user-front-dev/public/images/readme/image-1.png" width="500" alt="여행지/테마 선택 & 상품 리스트">
+<img src="./tripwhiz-user-front-dev/public/images/readme/image-1.png" width="700" alt="여행지/테마 선택 & 상품 리스트">
 
 - 픽업 날짜 선택 & 주문/결제<br>
-<img src="./tripwhiz-user-front-dev/public/images/readme/image-2.png" width="500" alt="픽업 날짜 선택 & 주문/결제">
+<img src="./tripwhiz-user-front-dev/public/images/readme/image-2.png" width="700" alt="픽업 날짜 선택 & 주문/결제">
 
 - 수화물 보관/이동<br>
-<img src="./tripwhiz-user-front-dev/public/images/readme/image-3.png" width="400" alt="수화물 보관/이동">
+<img src="./tripwhiz-user-front-dev/public/images/readme/image-3.png" width="600" alt="수화물 보관/이동">
 
 - 챗봇 UI<br>
-<img src="./tripwhiz-user-front-dev/public/images/readme/image-4.png" width="300" alt="챗봇 UI">
+<img src="./tripwhiz-user-front-dev/public/images/readme/image-4.png" width="500" alt="챗봇 UI">
 
 ---
 
